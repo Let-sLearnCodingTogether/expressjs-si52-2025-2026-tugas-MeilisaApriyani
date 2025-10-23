@@ -10,7 +10,7 @@ const database = async () => {
         `Koneksi ke MongoDB berhasil pada host: ${response.connection.host}`
     );
     } catch (error) {
-        console.log("Koneksi ke MongoDB gagal", error.message);
+        console.log("Koneksi ke MongoDB gagal");
         process.exit(1);
     }
 };

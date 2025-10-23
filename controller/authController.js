@@ -1,4 +1,4 @@
-import userModel from "../models/userModel.js";
+import UserModel from "../models/userModel.js";
 import User from "../models/userModel.js"
 
 export const register = async (req, res) => {
@@ -7,7 +7,7 @@ export const register = async (req, res) => {
 
         console.log(registerData);
 
-        await userModel.create({
+        await UserModel.create({
             username: registerData.username,
             email: registerData.email,
             password: registerData.password
