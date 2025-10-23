@@ -1,5 +1,5 @@
 import userModel from "../models/userModel.js";
-import User from "../models/userModel.js";
+import User from "../models/userModel.js"
 
 export const register = async (req, res) => {
     try {
@@ -61,3 +61,25 @@ export const login = async (req, res) => {
         })
     }
 }
+
+export const profile = async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id).select("-password");
+
+        if (!user) {
+            return res.status(404).json({
+                message: "User tidak ditemukan",
+                data: null
+            })
+        }
+            res.status(200).json({
+                message: "Data Profil tidak terdeteksi",
+                data: user,
+            })
+        }catch (error){
+            res.status(500).json({
+                message: error.message,
+                data: null
+            });
+        }
+    }
