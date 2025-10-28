@@ -10,7 +10,7 @@ export const createInven = async (req, res) => {
             purchaseDate: request.purchaseDate
         });
 
-        res.status(201).json({
+        res.status(200).json({
             message: "Inventory berhasil ditambahkan",
             data: response
         });
@@ -26,7 +26,7 @@ export const createInven = async (req, res) => {
         try {
             const data = await invenModel.find();
 
-            res.status(200).json({
+            res.status(201).json({
                 message: "Inventory items retrieved successfully",
                 data: data
             })
@@ -57,17 +57,17 @@ export const createInven = async (req, res) => {
 
             if(!response) {
                 return res.status(500).json({
-                    message: "Inventory tidak ditemukan",
+                    Inven: "Inventory tidak ditemukan",
                     data: null
                 })
             }
             return res.status(200).json({
-                message: "Inventory berhasil diupdate",
+                Inven: "Inventory berhasil diupdate",
                 data: null
             })
         } catch (error) {
             res.status(500).json({
-                message: error.message,
+                Inven: error.message,
                 data: null
             })
         }
@@ -79,7 +79,7 @@ export const createInven = async (req, res) => {
 
             if(!Id) {
                 return res.status(500).json({
-                    message: "ID Wajib untuk diisi",
+                    Inven: "Inventaris Wajib untuk diisi",
                     data: null
                 })
             }
@@ -87,17 +87,17 @@ export const createInven = async (req, res) => {
 
             if(response) {
                 return res.status(200).json({
-                    message: "Inventory berhasil dihapus",
+                    Inven: "Inventory berhasil dihapus",
                     data: null
                 })
             }
             return res.status(404).json({
-                message: "Inventory tidak ditemukan",
+                Inven: "Inventory tidak ditemukan",
                 data: null
             })
         } catch (error) {
             res.status(500).json({
-                message: error,
+                Inven: error,
                 data: null
             })
         }

@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const InvenSchema = new mongoose.Schema(
     {
@@ -22,6 +22,6 @@ const InvenSchema = new mongoose.Schema(
     }
 );
 
-const invenModel = mongoose.model("Inventory", InvenSchema);
+const invenModel = mongoose.model("Inven", InvenSchema);
 
 export default invenModel;
