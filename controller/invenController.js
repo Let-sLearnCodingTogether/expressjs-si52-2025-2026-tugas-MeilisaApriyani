@@ -1,4 +1,4 @@
-import invenModel from "../models/invenModel.js";
+import invenModel from "../model/invenModel.js";
 
 export const createInven = async (req, res) => {
     try {
